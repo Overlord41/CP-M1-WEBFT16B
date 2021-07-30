@@ -126,7 +126,23 @@ LinkedList.prototype.size = function(){
 
 LinkedList.prototype.switchPos = function(pos1, pos2){
   // Tu código aca:
-
+  var current1 = this.head;
+  var current2 = this.head;
+  var tamanio = this.size();
+  var elemento;
+  if(pos1>tamanio || pos1<0 || pos2>tamanio || pos2<0) return false;
+  for(var i=0;i<pos1;i++){
+    current1 = current1.next;
+  }
+  //console.log(current1.value);
+  for(var j=0;j<pos2;j++){
+    current2 = current2.next;
+  }
+  //console.log(current2.value);
+  elemento = current1.value;
+  current1.value = current2.value;
+  current2.value=elemento;
+  return true;
 }
 
 // EJERCICIO 5
