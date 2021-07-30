@@ -158,7 +158,26 @@ LinkedList.prototype.switchPos = function(pos1, pos2){
 // Continuando con el nodo 2 de la lista 2, conectandose con el nodo 2 de la lista 2.
 var mergeLinkedLists = function(linkedListOne, linkedListTwo){
   // Tu código aca:
-
+  var newLinkedList = new LinkedList();
+  var valor1 = linkedListOne.head;
+  var valor2 = linkedListTwo.head;
+  var tamanio1 = linkedListOne.size();
+  var tamanio2 = linkedListTwo.size();
+  var contador1 = 0;
+  var contador2 = 0;
+  while(contador1<tamanio1 || contador2<tamanio2){
+    if(contador1<tamanio1){
+      newLinkedList.add(valor1.value);
+      valor1 = valor1.next;
+      contador1++;
+    }
+    if(contador2<tamanio2){
+      newLinkedList.add(valor2.value);
+      valor2 = valor2.next;
+      contador2++;
+    }
+  }
+  return newLinkedList;
 }
 
 
