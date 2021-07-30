@@ -250,6 +250,19 @@ var cardGame = function(playerOneCards, playerTwoCards){
 BinarySearchTree.prototype.height = function(){
   // Tu código aca:
 
+  if(!this.right && !this.left) return 1;
+  if(!this.right && this.left){
+    return 1 + this.left.height();
+  }
+  if(this.right && !this.left){
+    return 1 + this.right.height();
+  }
+  var countLeft = this.left.height();
+  var countRight = this.right.height();
+
+  var valMax = 1 + Math.max(countLeft, countRight);
+  console.log(valMax);
+  return valMax;
 }
 
 
