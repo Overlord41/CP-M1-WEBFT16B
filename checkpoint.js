@@ -51,7 +51,7 @@ var isAncestor = function(genealogyTree, ancestor, descendant){
 // object es un objeto del cual debemos obtener f(0) y f(1) siguiendo la siguiente lógica:
 // f(0) será el valor de la propiedad llamada 'first'
 // f(1) será un número igual a la cantidad de propiedades de obj
-// Por ejemplo si recibimos: 
+// Por ejemplo si recibimos:
 // var obj = {
 //   1: true,
 //   first: 2,
@@ -77,8 +77,17 @@ var isAncestor = function(genealogyTree, ancestor, descendant){
 
 function secuenciaHenry(obj, n) {
   // Tu código aca:
-
-}
+  if (n<0){
+    return null;
+  }
+  if (n===0){
+    return obj.first;
+  }
+  if (n===1){
+    return Object.keys(obj).length;
+  }
+  return (secuenciaHenry(obj, n-1) * secuenciaHenry(obj, n-2) - secuenciaHenry(obj, n-2));
+ }
 
 // ---------------------
 
@@ -372,13 +381,13 @@ var specialSort = function(array, orderFunction) {
 function closureDetect(symptoms, min) {
   // Tu código aca:
   return function(person){
-    var cantidad = 0;
-    for (var i = 0; i < symptoms.length; i++) {
+    var cantidad=0;
+    for (var i=0; i<symptoms.length; i++) {
       if(symptoms.includes(person.symptoms[i])) {
       cantidad++;
       }
     }
-    if(cantidad >= min) {
+    if(cantidad>=min) {
     return true;
     }else{
       return false;
