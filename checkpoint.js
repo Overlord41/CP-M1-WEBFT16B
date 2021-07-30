@@ -98,7 +98,14 @@ function secuenciaHenry(obj, n) {
 
 LinkedList.prototype.size = function(){
   // Tu código aca:
-
+  var current = this.head;
+  var contador = 0;
+  if(!current) return 0;
+  while(current){
+    contador++;
+    current=current.next;
+  }
+  return contador;
 }
 
 
@@ -229,7 +236,7 @@ BinarySearchTree.prototype.height = function(){
 
 var binarySearch = function (array, target) {
   // Tu código aca:
-
+  
 }
 
 // EJERCICIO 9
@@ -290,7 +297,7 @@ var specialSort = function(array, orderFunction) {
 
 function closureDetect(symptoms, min) {
   // Tu código aca:
-
+  
 }
 
 // -------------------
